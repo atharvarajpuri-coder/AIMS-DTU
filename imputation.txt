@@ -1,0 +1,12 @@
+import pandas as pd
+import numpy as np
+data={
+    'player':['travis head','Jos Buttler','Mitchel Marsh'],
+    'rankings':[1 ,np.nan, 9]
+}
+DF=pd.DataFrame(data)
+
+mean_marks=DF['rankings'].mean()
+DF['rankings'].fillna(mean_marks,inplace=True)
+
+print(DF)
