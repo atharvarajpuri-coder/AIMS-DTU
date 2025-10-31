@@ -1,12 +1,12 @@
-import pandas as pd 
-import numpy as np 
-data={
-    'player':['travis head','Jos Buttler','Mitchel Marsh'],
-    'rankings':[1 ,np.nan, 9]
-}
+import pandas as pd
+
+data={'player name':['travis Head','Jos Buttler', 'Mitchel Marsh']}
+
 DF=pd.DataFrame(data)
 
-mean_marks=DF['rankings'].mean()
-DF['rankings'].fillna(mean_marks,inplace=True)
+rank={'travis Head':'1','Jos Buttler':'2','Mitchel Marsh':'3'}
 
+DF['encoded']=DF['player name'].map(rank)
+
+print("orignal data:")
 print(DF)
